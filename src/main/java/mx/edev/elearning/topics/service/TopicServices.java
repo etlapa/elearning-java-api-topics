@@ -3,6 +3,7 @@ package mx.edev.elearning.topics.service;
 import lombok.extern.slf4j.Slf4j;
 import mx.edev.elearning.topics.domain.TopicChild;
 import mx.edev.elearning.topics.domain.TopicTree;
+import mx.edev.elearning.topics.domain.entities.TopicEntity;
 import mx.edev.elearning.topics.domain.entities.TopicRelationEntity;
 import mx.edev.elearning.topics.repositories.TopicJdbcTemplate;
 import mx.edev.elearning.topics.repositories.TopicRelationRepository;
@@ -28,6 +29,10 @@ public class TopicServices {
         this.topicRepository = topicRepository;
         this.topicRelationRepository = topicRelationRepository;
         this.topicJdbcTemplate = topicJdbcTemplate;
+    }
+
+    public List<TopicEntity> findAll(){
+        return topicRepository.findAll();
     }
 
     public List<TopicTree> getTopicTree(){

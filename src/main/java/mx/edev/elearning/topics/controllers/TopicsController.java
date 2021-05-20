@@ -28,7 +28,12 @@ public class TopicsController {
     }
 
     @GetMapping()
-    public List<TopicTree> getAll(){
+    public List<TopicEntity> findAll(){
+        return this.topicServices.findAll();
+    }
+
+    @GetMapping("/tree")
+    public List<TopicTree> getTree(){
         return this.topicServices.getTopicTree();
     }
 
